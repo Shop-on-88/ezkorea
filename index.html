@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Korean wiper blades in the Philippines. Find your car's size and change your wipers yourself in about a minute, with no tools.">
+<meta property="og:title" content="EZ KOREA Wipers PH">
+<meta property="og:description" content="Clear view in every downpour. Find your car's wiper size and install in about a minute.">
+<meta property="og:image" content="img/hero.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/icon.png">
+<title>EZ KOREA Wipers PH</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: dark rain-photo hero, then light "workshop manual" sections — product cards, fit finder table, animated install demo, quality proof. */
+:root{
+  --bg:#F3F4F6; --surface:#FFFFFF; --ink:#141B2D; --muted:#5B6476; --line:#D9DDE5;
+  --navy:#16223F; --gold:#C98A1E; --gold-ink:#9A6610; --gold-soft:#F6E7C9;
+  --ok:#1E7A4C; --ok-soft:#DCF1E5; --warn:#A8530B; --warn-soft:#FBE8D3;
+  --glass1:#C9D6E3; --glass2:#9FB3C8; --hero-ink:#F5F1E8;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E121B; --surface:#161C29; --ink:#E9ECF2; --muted:#9AA3B5; --line:#2A3245;
+  --navy:#22305A; --gold:#E3A440; --gold-ink:#F0BC62; --gold-soft:#3A2D14;
+  --ok:#5CCB91; --ok-soft:#173326; --warn:#F2A35C; --warn-soft:#3A2614;
+  --glass1:#2B3A4E; --glass2:#1C2737; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E121B; --surface:#161C29; --ink:#E9ECF2; --muted:#9AA3B5; --line:#2A3245;
+  --navy:#22305A; --gold:#E3A440; --gold-ink:#F0BC62; --gold-soft:#3A2D14;
+  --ok:#5CCB91; --ok-soft:#173326; --warn:#F2A35C; --warn-soft:#3A2614;
+  --glass1:#2B3A4E; --glass2:#1C2737; color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:#0B0D12}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:.005em}
+h2{font-size:clamp(2rem,5vw,3rem);font-weight:700;text-transform:uppercase}
+h3{font-size:1.55rem;font-weight:700}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:.95rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+.lede{color:var(--muted);max-width:62ch;font-size:1.06rem}
+section{padding-block:72px}
+.sec-head{display:grid;gap:12px;margin-bottom:36px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:1.08rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:12px 20px;border-radius:999px;border:2px solid transparent;cursor:pointer;line-height:1}
+.btn-gold{background:var(--gold);color:#16120A}
+.btn-gold:hover{filter:brightness(1.08)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-sm{font-size:.92rem;padding:9px 14px}
+.btn[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#0B0D12;color:#EDE6D6;border-bottom:1px solid #222838}
+header.top .wrap{display:flex;align-items:center;gap:20px;padding-block:10px}
+header.top img{height:34px;width:auto;display:block}
+header.top nav{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap}
+header.top nav a{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:.98rem;opacity:.85}
+header.top nav a:hover{opacity:1;color:#E3A440}
+@media (max-width:760px){header.top nav{display:none}}
+header.top .btn{margin-left:auto}
+@media (min-width:761px){header.top .btn{margin-left:0}}
+
+/* hero (single dark look by design: it is a photo) */
+.hero{position:relative;background:#07090D;color:var(--hero-ink);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:url("img/hero.jpg") right center/cover no-repeat;opacity:.9}
+.hero video.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;opacity:.9}
+.realvid{margin-bottom:28px;display:grid;gap:10px}
+.realvid video{width:100%;max-width:100%;border-radius:var(--r);background:#0B0D12;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#07090D 0%,rgba(7,9,13,.92) 38%,rgba(7,9,13,.35) 70%,rgba(7,9,13,.1) 100%)}
+.hero .wrap{position:relative;z-index:1;padding-block:72px 64px;display:grid;gap:22px}
+.hero .eyebrow{color:#E3A440}
+.hero h1{font-size:clamp(2.9rem,8vw,5.6rem);font-weight:800;text-transform:uppercase;max-width:12ch}
+.hero h1 em{font-style:normal;color:#E3A440}
+.hero p.sub{max-width:46ch;font-size:1.15rem;color:#D7D2C6}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero .btn-ghost{color:#F5F1E8}
+.proof{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:10px;font-family:var(--display);letter-spacing:.08em;text-transform:uppercase;font-size:.95rem;color:#BDB6A6}
+.proof b{color:#F5F1E8;font-weight:700}
+
+/* easy strip */
+.easy{background:var(--gold);color:#16120A}
+.easy .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-block:22px}
+.easy div{display:grid;gap:2px}
+.easy strong{font-family:var(--display);font-size:2rem;font-weight:800;line-height:1}
+.easy span{font-weight:600;font-size:.98rem}
+@media (max-width:760px){.easy .wrap{grid-template-columns:repeat(2,1fr)}}
+
+/* products */
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+@media (max-width:820px){.products{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:grid;grid-template-rows:auto 1fr;grid-template-columns:minmax(0,1fr)}
+.card .shot{background:#FEFEFE;aspect-ratio:16/10;padding:18px;border-bottom:1px solid var(--line);max-width:100%;min-width:0}
+.card .shot img{width:100%;height:100%;max-width:100%;object-fit:contain;display:block}
+.card .body{padding:22px;display:grid;gap:14px;align-content:start}
+.tag{display:inline-block;font-family:var(--display);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;padding:3px 10px;border-radius:4px;background:var(--navy);color:#fff}
+.card h3 small{display:block;font-family:var(--body);font-size:.95rem;font-weight:500;color:var(--muted);margin-top:4px;letter-spacing:0}
+.feat{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.feat li{padding-left:24px;position:relative}
+.feat li::before{content:"";position:absolute;left:2px;top:.45em;width:12px;height:7px;border-left:2.5px solid var(--gold);border-bottom:2.5px solid var(--gold);transform:rotate(-45deg)}
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price b{font-family:var(--display);font-size:2.3rem;font-weight:800;line-height:1}
+.price s{color:var(--muted)}
+.price span{color:var(--muted);font-size:.95rem}
+.sizes{display:flex;flex-wrap:wrap;gap:5px}
+.sizes i{font-style:normal;font-variant-numeric:tabular-nums;font-size:.85rem;font-weight:600;border:1px solid var(--line);border-radius:4px;padding:1px 6px}
+.sizes i.no{text-decoration:line-through;color:var(--muted);border-style:dashed}
+.label{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;color:var(--muted)}
+.buy{display:flex;gap:10px;flex-wrap:wrap}
+
+/* arm types */
+.arms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
+@media (max-width:820px){.arms{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.arm{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;gap:8px;align-content:start}
+.arm svg{width:100%;height:auto;max-width:100%}
+.arm b{font-family:var(--display);font-size:1.2rem;letter-spacing:.03em}
+.fits{display:flex;gap:6px;flex-wrap:wrap}
+.pill{font-size:.8rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+
+/* finder */
+.finder{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.brands{display:flex;gap:6px;flex-wrap:wrap;padding:14px;border-bottom:1px solid var(--line)}
+.brands a{font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:7px 14px;border-radius:999px;border:1.5px solid var(--line);font-size:1rem}
+.brands a[aria-current="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.searchrow{display:flex;gap:12px;align-items:center;padding:12px 14px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.searchrow input{flex:1 1 220px;min-width:0;font:inherit;padding:10px 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.searchrow span{color:var(--muted);font-size:.95rem}
+.tablebox{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:720px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+th{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.88rem;color:var(--muted);background:var(--bg)}
+td.model{font-weight:700}
+td.model small{display:block;font-weight:500;color:var(--muted)}
+.inch{font-family:var(--display);font-weight:700;font-size:1.25rem}
+tbody tr:hover{background:color-mix(in srgb,var(--gold) 7%,transparent)}
+.note{padding:14px;color:var(--muted);font-size:.93rem}
+
+/* install */
+.install{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:900px){.install{grid-template-columns:1fr}}
+.player{background:#0B0D12;border-radius:var(--r);overflow:hidden;color:#EEE}
+.player svg{display:block;width:100%;height:auto;max-width:100%}
+.ctrl{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#12151D;flex-wrap:wrap}
+.ctrl button{font:inherit;font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:#E3A440;color:#16120A;border:0;border-radius:999px;padding:7px 14px;cursor:pointer}
+.bar{flex:1 1 160px;display:flex;gap:4px}
+.bar button{flex:1;height:8px;padding:0;border-radius:4px;background:#2C3242}
+.bar button.done{background:#E3A440}
+.bar button.cur{background:linear-gradient(90deg,#E3A440 var(--p,0%),#2C3242 var(--p,0%))}
+.ctrl .clock{font-variant-numeric:tabular-nums;color:#B9B3A6;font-size:.95rem}
+.caption{padding:14px 16px 18px;display:grid;gap:4px;min-height:96px}
+.caption b{font-family:var(--display);font-size:1.45rem;letter-spacing:.02em;color:#F5F1E8}
+.caption span{color:#C9C3B6}
+.caption i{color:#E3A440;font-style:normal;font-size:.95rem}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;padding:12px;border-radius:var(--r);border:1px solid var(--line);background:var(--surface);cursor:pointer}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--display);font-weight:800;font-size:1.5rem;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--bg);color:var(--ink)}
+.steps li.on{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.steps li.on::before{background:var(--gold);color:#16120A}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.95rem}
+
+/* svg scene */
+.scene .side,.scene .close{transition:opacity .6s}
+.scene[data-mode="side"] .close{opacity:0}
+.scene[data-mode="close"] .side{opacity:0}
+.armgrp{transform-origin:92px 300px;transition:transform 2.2s cubic-bezier(.45,0,.2,1)}
+.scene[data-step="1"].go .armgrp{transform:rotate(-30deg)}
+.scene[data-step="5"] .armgrp{transform:rotate(-30deg)}
+.scene[data-step="5"].go .armgrp{transform:rotate(0deg)}
+.oldb{transition:transform 2s cubic-bezier(.5,0,.3,1),opacity .8s 1.4s}
+.newb{transition:transform 2s cubic-bezier(.3,0,.2,1),opacity .6s}
+.adapter{transition:transform 1.4s cubic-bezier(.3,0,.2,1),opacity .4s}
+.scene .oldb{transform:translateY(0);opacity:1}
+.scene .newb{transform:translateY(150px);opacity:0}
+.scene .adapter{transform:translate(-120px,110px);opacity:0}
+.scene[data-step="2"].go .oldb{transform:translateY(150px);opacity:0}
+.scene[data-step="3"] .oldb,.scene[data-step="4"] .oldb{opacity:0;transform:translateY(150px)}
+.scene[data-step="3"] .newb{transform:translateY(110px);opacity:1}
+.scene[data-step="3"].go .adapter{transform:translate(0,110px);opacity:1}
+.scene[data-step="4"] .adapter{transform:translate(0,110px);opacity:1}
+.scene[data-step="4"] .newb{transform:translateY(110px);opacity:1}
+.scene[data-step="4"].go .newb{transform:translateY(0)}
+.scene[data-step="4"].go .adapter{transform:translate(0,0)}
+.press{opacity:0}
+.scene[data-step="2"] .press{animation:pulse 1s 3 ease-out}
+@keyframes pulse{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(1.8)}}
+.press{transform-box:fill-box;transform-origin:center}
+.click{opacity:0}
+.scene[data-step="4"].go .click{animation:pop .9s 2s both}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}40%{opacity:1;transform:scale(1.1)}100%{opacity:1;transform:scale(1)}}
+.click{transform-box:fill-box;transform-origin:center}
+.drop{animation:fall linear infinite}
+@keyframes fall{from{transform:translateY(-20px)}to{transform:translateY(380px)}}
+@media (prefers-reduced-motion: reduce){.drop{animation:none}.armgrp,.oldb,.newb,.adapter{transition:none}}
+
+/* everyone panel */
+.everyone{margin-top:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;background:var(--navy);color:#EEF0F6;border-radius:var(--r);padding:28px}
+@media (max-width:820px){.everyone{grid-template-columns:1fr}}
+.everyone h3{font-size:2.1rem;text-transform:uppercase}
+.everyone h3 em{font-style:normal;color:#E3A440}
+.everyone p{color:#C8CEDD}
+.tips{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.tips li{display:grid;gap:2px;padding-left:16px;border-left:3px solid #E3A440}
+.tips b{color:#fff}
+.tips span{color:#C8CEDD;font-size:.97rem}
+
+/* replace signs */
+.signs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.signs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:440px){.signs{grid-template-columns:1fr}}
+.sign{border-top:3px solid var(--gold);padding-top:12px;display:grid;gap:4px}
+.sign b{font-family:var(--display);font-size:1.3rem}
+.sign span{color:var(--muted);font-size:.97rem}
+
+/* quality */
+.quality{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:820px){.quality{grid-template-columns:1fr}}
+.quality figure{margin:0;display:grid;gap:8px}
+.quality img{border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover;max-width:100%}
+.quality figcaption b{display:block;font-family:var(--display);font-size:1.2rem}
+.quality figcaption span{color:var(--muted);font-size:.95rem}
+.certs{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.certs span{font-family:var(--display);font-weight:700;letter-spacing:.06em;padding:8px 14px;border:1.5px solid var(--line);border-radius:6px;background:var(--surface)}
+
+/* faq */
+details{border-bottom:1px solid var(--line);padding-block:14px}
+summary{cursor:pointer;font-weight:700;font-size:1.06rem}
+details p{color:var(--muted);margin-top:8px;max-width:70ch}
+
+/* promo ribbon */
+.promo{background:var(--navy);color:#EEF0F6}
+.promo .wrap{display:flex;gap:12px 20px;align-items:center;flex-wrap:wrap;padding-block:12px}
+.promo b{font-family:var(--display);font-size:1.3rem;letter-spacing:.04em;text-transform:uppercase;color:#E3A440}
+.promo span{flex:1 1 260px;min-width:0}
+
+/* join */
+.join{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px;align-items:start}
+@media (max-width:860px){.join{grid-template-columns:1fr}}
+.perks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.perks li{display:grid;grid-template-columns:56px 1fr;gap:14px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px}
+.perks .amt{font-family:var(--display);font-weight:800;font-size:1.35rem;line-height:1;text-align:center;background:var(--gold-soft);color:var(--gold-ink);border-radius:8px;padding:10px 4px}
+.perks b{display:block}
+.perks span{color:var(--muted);font-size:.95rem}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:14px}
+.form .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+@media (max-width:520px){.form .row{grid-template-columns:1fr}}
+.field{display:grid;gap:5px;min-width:0}
+.field label{font-weight:600;font-size:.95rem}
+.field input,.field select,.field textarea{font:inherit;width:100%;padding:10px 12px;border-radius:8px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.field textarea{min-height:96px;resize:vertical}
+.check{display:grid;grid-template-columns:20px 1fr;gap:10px;align-items:start;font-size:.95rem;color:var(--muted)}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--gold)}
+.form .err{color:var(--warn);font-weight:600;font-size:.95rem}
+.hp{position:absolute;left:-9999px}
+.voucher{border:2px dashed var(--gold);border-radius:var(--r);padding:22px;display:grid;gap:10px;background:var(--gold-soft)}
+.voucher .code{font-family:var(--display);font-weight:800;font-size:2.4rem;letter-spacing:.12em;color:var(--ink);user-select:all}
+.voucher small{color:var(--muted)}
+
+/* stores */
+.stores{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:820px){.stores{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.stores{grid-template-columns:1fr}}
+.store{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;display:grid;gap:6px;align-content:start}
+.store b{font-family:var(--display);font-size:1.3rem}
+.store .city{font-family:var(--display);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;color:var(--gold-ink)}
+.store span{color:var(--muted);font-size:.95rem}
+
+/* chat bubble */
+.chat{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#16120A;text-decoration:none;font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:12px 16px;border-radius:999px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.chat svg{width:20px;height:20px}
+.chat{border:0;cursor:pointer;font-size:1rem}
+.bot{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:31;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 120px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,.28);display:grid;grid-template-rows:auto 1fr auto;overflow:hidden}
+.bot header{background:#0B0D12;color:#F5F1E8;display:flex;align-items:center;gap:10px;padding:12px 14px}
+.bot header b{font-family:var(--display);font-size:1.2rem;letter-spacing:.04em;text-transform:uppercase}
+.bot header small{display:block;color:#B9B3A6;font-size:.82rem}
+.bot header .x{margin-left:auto;background:none;border:0;color:#F5F1E8;font-size:1.5rem;line-height:1;cursor:pointer;padding:4px 8px}
+.log{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.msg{max-width:86%;padding:9px 12px;border-radius:12px;font-size:.96rem;line-height:1.45}
+.msg.b{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.u{background:var(--navy);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg .big{font-family:var(--display);font-weight:800;font-size:1.6rem;line-height:1.1}
+.msg .row2{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;align-self:flex-start;max-width:100%}
+.chips button,.chips a{font:inherit;font-size:.9rem;font-weight:600;background:var(--surface);color:var(--ink);border:1.5px solid var(--gold);border-radius:999px;padding:6px 11px;cursor:pointer;text-decoration:none}
+.chips button:hover,.chips a:hover{background:var(--gold-soft)}
+.bot form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--surface)}
+.bot form input{flex:1;min-width:0;font:inherit;padding:9px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.bot form button{font:inherit;font-weight:700;background:var(--gold);color:#16120A;border:0;border-radius:999px;padding:0 14px;cursor:pointer}
+
+footer{background:#0B0D12;color:#B8B2A4}
+footer .wrap{padding-block:40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+@media (max-width:720px){footer .wrap{grid-template-columns:1fr}}
+footer img{height:56px;width:auto}
+footer b{color:#EDE6D6}
+footer .sel{user-select:all;color:#EDE6D6}
+</style>
+<style>
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a href="#top" aria-label="EZ KOREA home"><img src="img/logo.jpg" alt="EZ KOREA"></a>
+    <nav aria-label="Sections">
+      <a href="#products">Products</a>
+      <a href="#fit">Find my car</a>
+      <a href="#install">How to install</a>
+      <a href="#stores">Stores</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gold btn-sm" href="#join">Join &amp; save</a>
+  </div>
+</header>
+
+<section class="hero" id="top" style="padding-block:0">
+  <video class="bg" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="img/hero.jpg" aria-hidden="true" hidden></video>
+  <div class="wrap">
+    <span class="eyebrow">Korean wiper blades · now in the Philippines</span>
+    <h1>See clearly in <em>every</em> downpour.</h1>
+    <p class="sub">Quiet, streak-free blades built for typhoon season. Find your car's size in seconds and change them yourself in about a minute, with no tools.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="#fit">Find my car's size</a>
+      <a class="btn btn-ghost" href="#install">Watch how to install</a>
+    </div>
+    <div class="proof"><span><b>ISO 14001</b> environmental</span><span><b>ISO 45001</b> safety</span><span><b>KTR</b> rubber tested</span><span><b>10+ yrs</b> since 2015</span></div>
+  </div>
+</section>
+
+<div class="easy" role="note" aria-label="Easy to install">
+  <div class="wrap">
+    <div><strong>~1 min</strong><span>per blade, start to finish</span></div>
+    <div><strong>0 tools</strong><span>just your hands</span></div>
+    <div><strong>3 moves</strong><span>lift, slide, click</span></div>
+    <div><strong>Kaya mo 'to!</strong><span>made for first-timers</span></div>
+  </div>
+</div>
+
+<div class="promo">
+  <div class="wrap">
+    <b id="promoTitle"></b>
+    <span id="promoText"></span>
+    <a class="btn btn-gold btn-sm" href="#join">Join free</a>
+  </div>
+</div>
+
+<section id="products">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Two blades, one easy fit</span>
+      <h2>Choose your blade</h2>
+      <p class="lede">Both come as a front set of two: one driver-side and one passenger-side blade, cut to your car's sizes.</p>
+    </div>
+    <div class="products">
+      <article class="card" id="flat-d">
+        <div class="shot"><img src="img/flatd.jpg" alt="EZ KOREA Flat Wiper Type D with its set of clip-on adapters"></div>
+        <div class="body">
+          <div><span class="tag">Flat series · Type D</span></div>
+          <h3>Flat Universal Wiper<small>Frameless beam blade with an all-in-one adapter kit</small></h3>
+          <ul class="feat">
+            <li>Adapter kit included, fits most wiper arm types</li>
+            <li>Low-profile beam design stays pressed to the glass at speed</li>
+            <li>Quiet, even wipe in heavy rain</li>
+            <li>Tool-free installation</li>
+          </ul>
+          <div class="price"><b data-price="flatD"></b><s data-list="flatD"></s><span>per front set (2 pcs)</span></div>
+          <div><div class="label">Sizes in stock</div><div class="sizes" data-sizes="flatD"></div></div>
+          <div class="buy" data-buy="flatD"></div>
+        </div>
+      </article>
+      <article class="card" id="hybrid-a">
+        <div class="shot"><img src="img/hybrida.jpg" alt="EZ KOREA Hybrid Wiper Type A with aerodynamic cover"></div>
+        <div class="body">
+          <div><span class="tag">Hybrid series · Type A</span></div>
+          <h3>Hybrid Aero Wiper<small>Strong frame inside, aerodynamic cover outside</small></h3>
+          <ul class="feat">
+            <li>Aerodynamic cover reduces wind lift</li>
+            <li>Steady pressure from tip to tip</li>
+            <li>Durable structure for sun and rain</li>
+            <li>Clips straight onto U-hook arms</li>
+          </ul>
+          <div class="price"><b data-price="hybridA"></b><s data-list="hybridA"></s><span>per front set (2 pcs)</span></div>
+          <div><div class="label">Sizes in stock</div><div class="sizes" data-sizes="hybridA"></div></div>
+          <div class="buy" data-buy="hybridA"></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sec-head" style="margin:56px 0 0">
+      <span class="eyebrow">Check this first</span>
+      <h3 style="font-size:1.9rem;text-transform:uppercase">What does your wiper arm end look like?</h3>
+      <p class="lede">Lift the arm and look where the blade joins it. Most cars sold in the Philippines use a U-hook.</p>
+    </div>
+    <div class="arms">
+      <div class="arm">
+        <svg viewBox="0 0 160 90" aria-hidden="true"><rect x="0" y="0" width="160" height="90" rx="8" fill="var(--bg)"/><rect x="70" y="4" width="16" height="44" rx="3" fill="var(--ink)"/><path d="M70 44 v14 a12 12 0 0 0 24 0 v-6" fill="none" stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/><rect x="20" y="66" width="120" height="10" rx="4" fill="var(--muted)"/></svg>
+        <b>U-hook</b>
+        <div class="fits"><span class="pill ok">Flat D fits</span><span class="pill ok">Hybrid A fits</span></div>
+      </div>
+      <div class="arm">
+        <svg viewBox="0 0 160 90" aria-hidden="true"><rect x="0" y="0" width="160" height="90" rx="8" fill="var(--bg)"/><rect x="40" y="30" width="70" height="16" rx="3" fill="var(--ink)"/><circle cx="116" cy="38" r="7" fill="var(--gold)"/><rect x="20" y="62" width="120" height="10" rx="4" fill="var(--muted)"/></svg>
+        <b>Side pin</b>
+        <div class="fits"><span class="pill ok">Flat D fits</span><span class="pill warn">Hybrid A no</span></div>
+      </div>
+      <div class="arm">
+        <svg viewBox="0 0 160 90" aria-hidden="true"><rect x="0" y="0" width="160" height="90" rx="8" fill="var(--bg)"/><rect x="40" y="22" width="80" height="26" rx="5" fill="var(--ink)"/><rect x="68" y="28" width="24" height="14" rx="3" fill="var(--gold)"/><rect x="20" y="62" width="120" height="10" rx="4" fill="var(--muted)"/></svg>
+        <b>Push button</b>
+        <div class="fits"><span class="pill ok">Flat D fits</span><span class="pill warn">Hybrid A no</span></div>
+      </div>
+      <div class="arm">
+        <svg viewBox="0 0 160 90" aria-hidden="true"><rect x="0" y="0" width="160" height="90" rx="8" fill="var(--bg)"/><rect x="74" y="4" width="12" height="38" rx="3" fill="var(--ink)"/><rect x="60" y="40" width="40" height="12" rx="2" fill="var(--ink)"/><rect x="20" y="62" width="120" height="10" rx="4" fill="var(--muted)"/></svg>
+        <b>Bayonet / slim top</b>
+        <div class="fits"><span class="pill ok">Flat D fits</span><span class="pill warn">Hybrid A no</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fit" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Fit finder</span>
+      <h2>Find your car</h2>
+      <p class="lede">Pick your brand, then find your model. Sizes are for the front windshield, driver side first. Not sure? Measure your old blade end to end and match it to the nearest inch.</p>
+    </div>
+    <div class="finder">
+      <div class="brands" id="brands" role="tablist" aria-label="Car brands"></div>
+      <div class="searchrow">
+        <label for="q" class="label" style="margin:0">Search</label>
+        <input id="q" type="search" placeholder="e.g. Vios, Mirage, Ranger" autocomplete="off">
+        <span id="count"></span>
+      </div>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Model</th><th>Driver</th><th>Passenger</th><th>Flat D</th><th>Hybrid A</th><th>Buy</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p class="note">Sizes can change between model generations. Check the size printed on your current blade, or message us your car model and year before ordering. Hybrid A needs a U-hook arm.</p>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How to install · Paano magpalit</span>
+      <h2>Change your wipers in about a minute</h2>
+      <p class="lede">No tools, no mechanic, no appointment. Play the demo, or tap any step to replay it.</p>
+    </div>
+    <div class="realvid" id="realVid" hidden>
+      <video id="installVideo" controls playsinline preload="metadata" poster="img/hero.jpg"></video>
+      <span class="label">Real install, filmed on a Toyota Vios. Step-by-step guide below.</span>
+    </div>
+    <div class="install">
+      <div class="player">
+        <svg class="scene" id="scene" viewBox="0 0 640 360" data-step="1" data-mode="side" role="img" aria-label="Animated demo of replacing a wiper blade">
+          <defs>
+            <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5D7389"/><stop offset="1" stop-color="#263445"/></linearGradient>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2230"/><stop offset="1" stop-color="#0D1118"/></linearGradient>
+          </defs>
+          <rect width="640" height="360" fill="url(#sky)"/>
+          <g id="rain" opacity=".55"></g>
+
+          <!-- SIDE VIEW: lift / lower the arm -->
+          <g class="side">
+            <path d="M0 300 L640 300 L640 360 L0 360 Z" fill="#1C2533"/>
+            <path d="M60 300 L600 70 L640 70 L640 300 Z" fill="url(#glass)" opacity=".9"/>
+            <path d="M60 300 L600 70" stroke="#9FB3C8" stroke-width="2" opacity=".6"/>
+            <circle cx="92" cy="300" r="13" fill="#0B0D12" stroke="#3A4558" stroke-width="3"/>
+            <g class="armgrp">
+              <path d="M92 296 L470 136" stroke="#2A3242" stroke-width="12" stroke-linecap="round"/>
+              <path d="M92 296 L470 136" stroke="#6B7890" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+              <path d="M300 214 L560 104" stroke="#0B0D12" stroke-width="16" stroke-linecap="round"/>
+              <path d="M300 206 L560 96" stroke="#5A6680" stroke-width="2" stroke-linecap="round"/>
+              <path d="M300 222 L560 112" stroke="#C98A1E" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <text x="34" y="44" fill="#E3A440" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="22" letter-spacing="2">SIDE VIEW</text>
+          </g>
+
+          <!-- CLOSE-UP: swap the blade -->
+          <g class="close">
+            <rect width="640" height="360" fill="url(#glass)" opacity=".55"/>
+            <!-- arm coming down from top, ending in U-hook -->
+            <rect x="302" y="-10" width="36" height="150" rx="6" fill="#11151C" stroke="#3A4558" stroke-width="2"/>
+            <path d="M306 132 v40 a14 14 0 0 0 28 0 v-18" fill="none" stroke="#11151C" stroke-width="10" stroke-linecap="round"/>
+            <!-- old blade -->
+            <g class="oldb">
+              <rect x="110" y="182" width="420" height="22" rx="8" fill="#5A606B"/>
+              <path d="M118 204 l10 9 l12 -7 l14 10 l10 -8 l16 9 l12 -6 l20 10 l14 -9 l18 8 l22 -7 l16 9 l20 -8 l24 9 l18 -7 l16 8 l22 -9 l20 8 l18 -6 l20 9 l16 -8 l14 7 l12 -6" fill="none" stroke="#7B828E" stroke-width="5" stroke-linejoin="round"/>
+              <rect x="294" y="168" width="52" height="22" rx="4" fill="#474D57"/>
+              <rect x="314" y="160" width="12" height="14" rx="2" fill="#2D323B"/>
+              <text x="320" y="246" text-anchor="middle" fill="#B7BDC7" font-family="Barlow, sans-serif" font-size="15">old, cracked rubber</text>
+            </g>
+            <circle class="press" cx="345" cy="178" r="16" fill="none" stroke="#E3A440" stroke-width="4"/>
+            <!-- new blade -->
+            <g class="newb">
+              <rect x="100" y="182" width="440" height="20" rx="9" fill="#0E1116"/>
+              <rect x="100" y="200" width="440" height="7" rx="3" fill="#1A1E25"/>
+              <path d="M112 186 H528" stroke="#C98A1E" stroke-width="2.5"/>
+              <text x="134" y="236" fill="#F5F1E8" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="18" letter-spacing="2">EZ KOREA</text>
+            </g>
+            <g class="adapter">
+              <rect x="294" y="164" width="52" height="24" rx="5" fill="#E3A440"/>
+              <rect x="314" y="158" width="12" height="12" rx="2" fill="#9A6610"/>
+            </g>
+            <g class="click">
+              <circle cx="380" cy="150" r="30" fill="#E3A440"/>
+              <text x="380" y="157" text-anchor="middle" fill="#16120A" font-family="Barlow Condensed, sans-serif" font-weight="800" font-size="20">CLICK</text>
+            </g>
+            <text x="34" y="44" fill="#E3A440" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-weight="700" font-size="22" letter-spacing="2">CLOSE-UP</text>
+          </g>
+          <text id="stepno" x="606" y="44" text-anchor="end" fill="#F5F1E8" font-family="Barlow Condensed, sans-serif" font-weight="800" font-size="30">1/5</text>
+        </svg>
+        <div class="ctrl">
+          <button id="play" type="button" aria-pressed="true">Pause</button>
+          <div class="bar" id="bar" aria-label="Steps"></div>
+          <span class="clock" id="clock">0:00</span>
+        </div>
+        <div class="caption" aria-live="polite"><b id="capT"></b><span id="capD"></span><i id="capF"></i></div>
+      </div>
+      <ol class="steps" id="steps"></ol>
+    </div>
+
+    <div class="everyone">
+      <div style="display:grid;gap:12px;align-content:start">
+        <span class="eyebrow" style="color:#E3A440">Made easy for every driver</span>
+        <h3>If you can buckle a seatbelt, <em>you can do this.</em></h3>
+        <p>You don't need to be strong or handy, or to own a single tool. Moms on the school run, students, first-time car owners: our blades need about the same effort as plugging in a phone charger. Save the trip to the shop and the labor fee.</p>
+      </div>
+      <ul class="tips">
+        <li><b>Long nails?</b><span>Press the release tab with the pad of your thumb, not your fingertip.</span></li>
+        <li><b>Protect the glass</b><span>Lay a folded towel on the windshield while the blade is off. A bare arm can snap back and chip the glass.</span></li>
+        <li><b>Do one side at a time</b><span>Keep the old blade next to you so you can match the direction of the new one.</span></li>
+        <li><b>Listen for the click</b><span>Give the blade a gentle tug afterwards. If it stays put, you're done.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Before the rainy season (June to November)</span>
+      <h2>Time for new blades?</h2>
+    </div>
+    <div class="signs">
+      <div class="sign"><b>Streaks or haze</b><span>Lines of water stay on the glass after each pass.</span></div>
+      <div class="sign"><b>Squeaking or chatter</b><span>The blade skips and judders instead of gliding.</span></div>
+      <div class="sign"><b>Cracked rubber</b><span>Sun and heat harden the edge. Look for splits along the blade.</span></div>
+      <div class="sign"><b>6 to 12 months</b><span>Replace twice a year if your car sits outside in the sun.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="join" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">EZ Club · free membership</span>
+      <h2>Join and get <span id="joinAmt"></span> off</h2>
+      <p class="lede">Sign up in 30 seconds. We'll give you a welcome voucher right away and remind you when it's time for new blades.</p>
+    </div>
+    <div class="join">
+      <ul class="perks" id="perks"></ul>
+      <div>
+        <form class="form" id="joinForm" name="join" method="POST" data-netlify="true" netlify-honeypot="_honey" novalidate>
+          <input type="hidden" name="form-name" value="join">
+          <input type="hidden" name="_subject" value="New EZ Club member">
+          <input type="hidden" name="_template" value="table">
+          <p class="hp"><label for="bot1">Leave empty</label><input id="bot1" name="_honey" tabindex="-1" autocomplete="off"></p>
+          <div class="row">
+            <div class="field"><label for="j-name">Full name</label><input id="j-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="j-mobile">Mobile number</label><input id="j-mobile" name="mobile" type="tel" inputmode="tel" placeholder="09XX XXX XXXX" autocomplete="tel" required></div>
+          </div>
+          <div class="field"><label for="j-email">Email (optional)</label><input id="j-email" name="email" type="email" autocomplete="email"></div>
+          <div class="row">
+            <div class="field"><label for="j-brand">Car brand</label><select id="j-brand" name="car_brand"></select></div>
+            <div class="field"><label for="j-model">Model and year</label><input id="j-model" name="car_model" placeholder="e.g. Vios 2019"></div>
+          </div>
+          <div class="field"><label for="j-city">City</label><input id="j-city" name="city" placeholder="e.g. Quezon City" autocomplete="address-level2"></div>
+          <label class="check" for="j-remind"><input id="j-remind" name="reminder" type="checkbox" value="yes" checked><span>Remind me to replace my wipers in 6 months.</span></label>
+          <label class="check" for="j-promo"><input id="j-promo" name="promos" type="checkbox" value="yes"><span>Send me promos and rainy-season deals.</span></label>
+          <label class="check" for="j-consent"><input id="j-consent" name="consent" type="checkbox" value="yes" required><span>I agree to the <a href="privacy.html" target="_blank" rel="noopener">Privacy Notice</a> and consent to the collection of my details under the Data Privacy Act of 2012.</span></label>
+          <p class="err" id="joinErr" hidden></p>
+          <button class="btn btn-gold" type="submit">Join and get my voucher</button>
+        </form>
+        <div class="voucher" id="voucher" hidden aria-live="polite">
+          <b id="vHello" style="font-family:var(--display);font-size:1.5rem"></b>
+          <span>Your welcome voucher:</span>
+          <span class="code" id="vCode"></span>
+          <div class="buy"><button class="btn btn-gold btn-sm" type="button" id="vCopy">Copy code</button></div>
+          <small id="vNote"></small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stores">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where to buy</span>
+      <h2>Find us in store</h2>
+      <p class="lede">Prefer to see the blades first? Visit one of our partner shops and ask for EZ KOREA. Some shops can install them for you.</p>
+    </div>
+    <div class="stores" id="storeList"></div>
+  </div>
+</section>
+
+<section id="quality" style="background:var(--surface);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Manufacturing &amp; quality control</span>
+      <h2>Tested before it reaches your car</h2>
+      <p class="lede">EZ KOREA has made wiper blades since 2015, with its head office and factory in Suwon, Korea, and a manufacturing facility in Guangzhou. Every blade goes through quality control for durability and wiping performance.</p>
+    </div>
+    <div class="quality">
+      <figure><img src="img/qc1.jpg" alt="Technician running a heat resistance test"><figcaption><b>Heat resistance test</b><span>High-temperature coating and durability checks.</span></figcaption></figure>
+      <figure><img src="img/qc2.jpg" alt="Technician spraying water on a windshield to test wiping"><figcaption><b>Performance testing</b><span>Real-world wiping and water-repellency tests.</span></figcaption></figure>
+      <figure><img src="img/certs.jpg" alt="ISO 14001 and ISO 45001 certificates and KTR test report" style="object-position:top"><figcaption><b>Certified</b><span>ISO 14001:2015, ISO 45001:2018 and a KTR test report on the wiper rubber.</span></figcaption></figure>
+    </div>
+    <div class="certs"><span>ISO 14001:2015</span><span>ISO 45001:2018</span><span>KTR rubber test</span><span>Korea Customer Satisfaction Brand Award 2025</span><span>AAPEX Las Vegas 2024</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap" style="max-width:860px">
+    <div class="sec-head"><span class="eyebrow">Questions</span><h2>FAQ</h2></div>
+    <details><summary>Flat D or Hybrid A: which should I buy?</summary><p>If your arm is a U-hook, both fit. Hybrid A costs less and has a sturdy covered frame. Flat D has a slimmer beam design and comes with adapters for other arm types, so pick it if you're not sure what your arm is, or if your car has a side pin or push button.</p></details>
+    <details><summary>Is a set one blade or two?</summary><p>A set is two blades for the front windshield: one driver side and one passenger side, each in the size your car needs.</p></details>
+    <details><summary>My car isn't on the list.</summary><p>Measure your old blades from end to end, or read the size printed on them, and message us your car model and year. We'll confirm the right sizes before you order.</p></details>
+    <details><summary>Do I need to go to a shop to install?</summary><p>No. Lift the arm, slide the old blade off, click the new one on and lower the arm. It takes about a minute per blade with no tools.</p></details>
+    <details><summary>How do I use my welcome voucher?</summary><p>Enter the code at checkout in our Lazada or Shopee store, or show it at a partner shop. One voucher per member.</p></details>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--surface);border-top:1px solid var(--line)">
+  <div class="wrap" style="max-width:860px">
+    <div class="sec-head">
+      <span class="eyebrow">Ask us</span>
+      <h2>Not sure about your size?</h2>
+      <p class="lede">Tell us your car and we'll reply with the right blades. Bulk and shop orders are welcome too.</p>
+    </div>
+    <form class="form" id="askForm" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="_honey" novalidate>
+      <input type="hidden" name="form-name" value="inquiry">
+      <input type="hidden" name="_subject" value="New website question">
+      <input type="hidden" name="_template" value="table">
+      <p class="hp"><label for="bot2">Leave empty</label><input id="bot2" name="_honey" tabindex="-1" autocomplete="off"></p>
+      <div class="row">
+        <div class="field"><label for="a-name">Name</label><input id="a-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="a-contact">Mobile or email</label><input id="a-contact" name="contact" required></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="a-type">I'm asking about</label><select id="a-type" name="topic"><option>Which size fits my car</option><option>Order or delivery</option><option>Bulk / shop order</option><option>Something else</option></select></div>
+        <div class="field"><label for="a-car">Car and year</label><input id="a-car" name="car" placeholder="e.g. Toyota Innova 2018"></div>
+      </div>
+      <div class="field"><label for="a-msg">Message</label><textarea id="a-msg" name="message"></textarea></div>
+      <label class="check" for="a-consent"><input id="a-consent" name="consent" type="checkbox" value="yes" required><span>I agree to the <a href="privacy.html" target="_blank" rel="noopener">Privacy Notice</a>.</span></label>
+      <p class="err" id="askErr" hidden></p>
+      <button class="btn btn-gold" type="submit">Send question</button>
+    </form>
+    <div class="voucher" id="askDone" hidden aria-live="polite"><b style="font-family:var(--display);font-size:1.5rem">Thanks, we got your question.</b><span>We usually reply within one business day.</span><small id="askNote"></small></div>
+  </div>
+</section>
+
+<div class="bot" id="bot" role="dialog" aria-label="EZ KOREA helper chat" hidden>
+  <header>
+    <img src="img/logo.jpg" alt="" style="height:28px;width:auto">
+    <div><b>EZ Helper</b><small>Instant answers, 24/7</small></div>
+    <button class="x" type="button" id="botClose" aria-label="Close chat">×</button>
+  </header>
+  <div class="log" id="log" aria-live="polite"></div>
+  <form id="botForm" autocomplete="off">
+    <label for="botIn" class="hp">Type your car model</label>
+    <input id="botIn" placeholder="Type your car, e.g. Vios">
+    <button type="submit">Send</button>
+  </form>
+</div>
+<button class="chat" id="chat" type="button" aria-expanded="false" aria-controls="bot"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.9 2 11.7c0 2.6 1.3 4.9 3.4 6.5V22l3.5-1.9c1 .3 2 .4 3.1.4 5.5 0 10-3.9 10-8.8S17.5 3 12 3z"/></svg><span>Chat with us</span></button>
+
+<footer>
+  <div class="wrap">
+    <div style="display:grid;gap:10px;align-content:start">
+      <img src="img/logo.jpg" alt="EZ KOREA">
+      <p>Premium Korean wiper blades, sold in the Philippines.</p>
+      <p><a href="privacy.html" target="_blank" rel="noopener">Privacy Notice</a></p>
+    </div>
+    <div style="display:grid;gap:6px;font-size:.97rem" id="seller"></div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Store settings: edit prices and shop links here ---------- */
+const SHOP = {
+  lazada: "",   // paste your Lazada store or product URL
+  shopee: ""    // paste your Shopee store or product URL
+};
+/* Your business details for the footer (leave a line "" to hide it) */
+const SELLER = {
+  name:    "[Your business name]",
+  address: "[Business address, Philippines]",
+  phone:   "[Phone / Viber]",
+  email:   "[Email]",
+  reg:     "[DTI / BIR registration no.]"
+};
+/* Member events: create the same voucher code in your Lazada / Shopee seller center */
+const EVENT = {
+  welcomeCode: "EZWELCOME50",
+  welcomeOff: 50,      // ₱ off for new members
+  reviewOff: 100,      // ₱ off next set for posting an install video
+  promoTitle: "Rainy season promo",
+  promoText: "Join EZ Club free and get ₱50 off your first set, plus a reminder when your blades need changing."
+};
+/* Form addresses (FormSubmit): entries are emailed to you. Uses your private FormSubmit address, so your email stays hidden. */
+const FORMS = {
+  join: "https://formsubmit.co/ajax/bb6298a4ca5cd4014a5be08f613646d9",      // EZ Club sign-ups
+  inquiry: "https://formsubmit.co/ajax/bb6298a4ca5cd4014a5be08f613646d9"    // "Ask us" questions
+};
+/* Videos: put .mp4 files in the video/ folder. installCaption describes your own filmed install video. */
+const VIDEOS = {
+  hero: "video/hero.mp4",
+  install: "",          // e.g. "video/install.mp4" once you film it
+  installCaption: "Real install, step by step."
+};
+/* Chat button: paste your Facebook Messenger link (m.me/yourpage) or leave "" to open the contact form */
+const CHAT = "";
+/* Offline partner shops: [shop name, city, address, opening hours] */
+const STORES = [
+  ["[Partner shop name]", "[City]", "[Street address]", "[Mon–Sat, 8am–6pm]"],
+  ["[Partner shop name]", "[City]", "[Street address]", "[Mon–Sat, 8am–6pm]"],
+  ["[Partner shop name]", "[City]", "[Street address]", "[Mon–Sat, 8am–6pm]"]
+];
+const PRODUCTS = {
+  flatD:   { price: 699, list: 899, sizes: [12,13,14,15,16,17,18,19,21,22,24,26,28,30,32] },
+  hybridA: { price: 499, list: 799, sizes: [12,13,14,16,17,18,19,20,21,22,24,26,28,30,32] }
+};
+/* Front windshield sizes in inches: [model, years, driver, passenger] */
+const CARS = {
+  Toyota: [["Vios","2013–2026",24,14],["Wigo","2014–2026",21,14],["Innova","2016–2026",26,16],["Fortuner","2016–2022",22,16],["Avanza","2006–2021",20,16],["Hilux","2015–2020",22,16],["Hiace Grandia","2005–2021",22,22],["Corolla Altis","2008–2013",26,14],["Raize","2022–2024",22,16],["Camry","2012–2018",26,18]],
+  Mitsubishi: [["Mirage / Mirage G4","2012–2023",22,14],["Xpander","2018–2026",26,16],["Montero Sport","2009–2015",22,18],["Adventure","1998–2018",20,20],["L300","1989–2026",18,18]],
+  Honda: [["Civic","2016–2021",26,18],["BR-V","2016–2022",22,16],["Mobilio","2015–2021",22,16],["Brio / Brio Amaze","2014–2021",22,16],["Jazz","2008–2014",26,14]],
+  Hyundai: [["Accent","2012–2020",26,14],["Grand Starex","2007–2021",24,20],["Elantra","2011–2015",26,14],["Santa Fe","2013–2018",26,14],["i10","2008–2013",22,16]],
+  Ford: [["Ranger","2015–2021",24,14],["Fiesta","2008–2017",24,14],["Focus","2006–2011",26,17]],
+  Nissan: [["Almera","2015–2021",21,14],["Navara","2014–2021",24,17],["Juke","2015–2019",22,14],["Teana","2010–2014",26,16],["Altima","2014–2018",28,16]],
+  Isuzu: [["mu-X","2014–2021",22,19],["Crosswind","2001–2017",22,16]],
+  Suzuki: [["APV","2005–2026",18,18],["Alto","2008–2014",22,12]],
+  Kia: [["Picanto","2011–2017",24,14],["Sorento","2015–2020",26,16],["Carens","2007–2013",26,16]],
+  Chevrolet: [["Cruze","2009–2015",24,18]]
+};
+
+{
+  const box = document.getElementById("seller");
+  [["name",""],["address",""],["phone","Tel "],["email","Email "],["reg",""]].forEach(([k,label]) => {
+    if (!SELLER[k]) return;
+    const el = document.createElement(k === "name" ? "b" : "span");
+    if (label) { el.append(label); const v = document.createElement("span"); v.className = "sel"; v.textContent = SELLER[k]; el.append(v); }
+    else el.textContent = SELLER[k];
+    box.append(el);
+  });
+}
+const peso = n =>"₱" + n.toLocaleString("en-PH");
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+
+function shopButtons(label, small){
+  const cls = "btn " + (small ? "btn-sm " : "") ;
+  const out = [];
+  [["lazada","Lazada"],["shopee","Shopee"]].forEach(([k,name],i) => {
+    const a = document.createElement("a");
+    a.className = cls + (i === 0 ? "btn-gold" : "btn-ghost");
+    a.textContent = (small ? "" : "Buy on ") + name;
+    if (SHOP[k]) { a.href = SHOP[k]; a.target = "_blank"; a.rel = "noopener"; }
+    else { a.setAttribute("aria-disabled","true"); a.title = name + " store link coming soon"; a.href = "#" + label; }
+    out.push(a);
+  });
+  return out;
+}
+
+for (const [k,p] of Object.entries(PRODUCTS)) {
+  document.querySelector(`[data-price="${k}"]`).textContent = peso(p.price);
+  document.querySelector(`[data-list="${k}"]`).textContent = p.list > p.price ? peso(p.list) : "";
+  const box = document.querySelector(`[data-sizes="${k}"]`);
+  [12,13,14,15,16,17,18,19,20,21,22,24,26,28,30,32].forEach(s => {
+    const i = document.createElement("i"); i.textContent = s + '"';
+    if (!p.sizes.includes(s)) { i.className = "no"; i.title = s + '" not available'; }
+    box.append(i);
+  });
+  document.querySelector(`[data-buy="${k}"]`).append(...shopButtons(k === "flatD" ? "flat-d" : "hybrid-a"));
+}
+
+/* ---------- Fit finder ---------- */
+const brandsEl = document.getElementById("brands"), rowsEl = document.getElementById("rows"), qEl = document.getElementById("q"), countEl = document.getElementById("count");
+let brand = "Toyota";
+Object.keys(CARS).forEach(b => {
+  const a = document.createElement("a");
+  a.href = "#" + slug(b); a.textContent = b; a.setAttribute("role","tab"); a.dataset.brand = b;
+  a.addEventListener("click", e => { e.preventDefault(); brand = b; qEl.value = ""; render(); history.replaceState(null,"","#"+slug(b)); });
+  brandsEl.append(a);
+});
+function fitCell(product, d, p){
+  const sizes = PRODUCTS[product].sizes, miss = [d,p].filter(s => !sizes.includes(s));
+  if (miss.length) return `<span class="pill warn">${[...new Set(miss)].join('", ')}" not stocked</span>`;
+  return product === "hybridA" ? `<span class="pill ok">Fits U-hook</span>` : `<span class="pill ok">Fits</span>`;
+}
+function render(){
+  const q = qEl.value.trim().toLowerCase();
+  [...brandsEl.children].forEach(a => a.setAttribute("aria-current", !q && a.dataset.brand === brand ? "true" : "false"));
+  const list = [];
+  for (const [b, cars] of Object.entries(CARS)) {
+    if (!q && b !== brand) continue;
+    cars.forEach(c => { if (!q || (b + " " + c[0]).toLowerCase().includes(q)) list.push([b, ...c]); });
+  }
+  rowsEl.innerHTML = "";
+  list.forEach(([b, m, y, d, p]) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `<td class="model">${q ? b + " " : ""}${m}<small>${y}</small></td><td><span class="inch">${d}"</span></td><td><span class="inch">${p}"</span></td><td>${fitCell("flatD",d,p)}</td><td>${fitCell("hybridA",d,p)}</td><td class="buy"></td>`;
+    const td = tr.lastElementChild; td.style.display = "flex"; td.style.gap = "6px";
+    td.append(...shopButtons("fit", true));
+    rowsEl.append(tr);
+  });
+  if (!list.length) rowsEl.innerHTML = `<tr><td colspan="6">No match. Message us your car model and year and we'll find your size.</td></tr>`;
+  countEl.textContent = list.length + (list.length === 1 ? " model" : " models");
+}
+qEl.addEventListener("input", render);
+const fromHash = Object.keys(CARS).find(b => "#" + slug(b) === location.hash);
+if (fromHash) { brand = fromHash; }
+render();
+if (fromHash) document.getElementById("fit").scrollIntoView();
+
+/* ---------- Videos ---------- */
+if (VIDEOS.hero && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const v = document.getElementById("heroVideo");
+  v.src = VIDEOS.hero; v.hidden = false;
+  v.addEventListener("error", () => { v.hidden = true; });
+  v.play().catch(() => {});
+}
+if (VIDEOS.install) {
+  document.getElementById("installVideo").src = VIDEOS.install;
+  document.querySelector("#realVid .label").textContent = VIDEOS.installCaption;
+  document.getElementById("realVid").hidden = false;
+}
+
+/* ---------- Promo, perks, stores, chat ---------- */
+document.getElementById("promoTitle").textContent = EVENT.promoTitle;
+document.getElementById("promoText").textContent = EVENT.promoText;
+document.getElementById("joinAmt").textContent = peso(EVENT.welcomeOff);
+[
+  [peso(EVENT.welcomeOff), "Welcome voucher", "Use it on your first set, online or in store."],
+  [peso(EVENT.reviewOff), "Install video reward", "Post a video of your install, tag us, and get this off your next set."],
+  ["6 mo", "Replacement reminder", "We'll message you before the blades wear out."],
+  ["First", "Member-only sales", "Hear about rainy-season deals before everyone else."]
+].forEach(([amt, t, d]) => {
+  const li = document.createElement("li");
+  li.innerHTML = `<span class="amt"></span><div><b></b><span></span></div>`;
+  li.querySelector(".amt").textContent = amt; li.querySelector("b").textContent = t; li.querySelector("div span").textContent = d;
+  document.getElementById("perks").append(li);
+});
+const brandSel = document.getElementById("j-brand");
+["Select brand", ...Object.keys(CARS), "Other"].forEach((b, i) => { const o = new Option(b, i ? b : ""); brandSel.append(o); });
+STORES.forEach(([n, c, a, h]) => {
+  const d = document.createElement("div"); d.className = "store";
+  d.innerHTML = `<span class="city"></span><b></b><span></span><span></span>`;
+  const s = d.children; s[0].textContent = c; s[1].textContent = n; s[2].textContent = a; s[3].textContent = h;
+  document.getElementById("storeList").append(d);
+});
+/* ---------- EZ Helper: auto-reply chat ---------- */
+{
+  const bot = document.getElementById("bot"), log = document.getElementById("log"), btn = document.getElementById("chat");
+  const say = (html, who = "b") => { const d = document.createElement("div"); d.className = "msg " + who; d.innerHTML = html; log.append(d); log.scrollTop = log.scrollHeight; return d; };
+  const userSays = t => { const d = say("", "u"); d.textContent = t; };
+  const chips = items => {
+    log.querySelectorAll(".chips").forEach(c => c.remove());
+    const c = document.createElement("div"); c.className = "chips";
+    items.forEach(([label, fn]) => {
+      const b = document.createElement("button"); b.type = "button"; b.textContent = label;
+      b.addEventListener("click", () => { userSays(label); setTimeout(fn, 250); });
+      c.append(b);
+    });
+    log.append(c); log.scrollTop = log.scrollHeight;
+  };
+  const goTo = id => { bot.hidden = true; btn.setAttribute("aria-expanded","false"); document.getElementById(id).scrollIntoView(); };
+  const menu = () => chips([
+    ["Find my wiper size", pickBrand],
+    ["How to install", install],
+    ["Prices", prices],
+    ["Get ₱" + EVENT.welcomeOff + " voucher", voucher],
+    ["Where to buy", stores],
+    ["Talk to a person", human]
+  ]);
+  const back = extra => chips([...(extra || []), ["Main menu", () => { say("What else can I help with?"); menu(); }]]);
+
+  function pickBrand(){
+    say("Which brand is your car?");
+    chips([...Object.keys(CARS).map(b => [b, () => pickModel(b)]), ["Other brand", notListed]]);
+  }
+  function pickModel(b){
+    say(`Great. Which ${b} model?`);
+    chips([...CARS[b].map(c => [c[0] + " (" + c[1] + ")", () => result(b, c)]), ["Not listed", notListed], ["Back to brands", pickBrand]]);
+  }
+  function result(b, [m, y, d, p]){
+    const fit = k => { const s = PRODUCTS[k].sizes; return s.includes(d) && s.includes(p); };
+    let html = `Your <b>${b} ${m}</b> (${y}) uses:<div class="big">${d}" + ${p}"</div><small>Driver side ${d}", passenger side ${p}"</small>`;
+    const opts = [];
+    if (fit("flatD")) opts.push(`<b>Flat D</b> fits, ${peso(PRODUCTS.flatD.price)} per set`);
+    else opts.push(`<b>Flat D</b>: ${[d,p].filter(s => !PRODUCTS.flatD.sizes.includes(s)).join('", ')}" not in stock`);
+    if (fit("hybridA")) opts.push(`<b>Hybrid A</b> fits U-hook arms, ${peso(PRODUCTS.hybridA.price)} per set`);
+    else opts.push(`<b>Hybrid A</b>: ${[d,p].filter(s => !PRODUCTS.hybridA.sizes.includes(s)).join('", ')}" not in stock`);
+    say(html);
+    say(opts.join("<br>"));
+    say("Tip: sizes can change between model years. Check the size printed on your old blade to be sure.");
+    back([["See products", () => goTo("products")], ["How to install", install], ["Get ₱" + EVENT.welcomeOff + " voucher", voucher]]);
+  }
+  function notListed(){
+    say("No problem. Measure your old blade from end to end, or read the size printed on it, then send us your car model and year. We'll confirm the right size.");
+    back([["Send my car details", () => goTo("contact")]]);
+  }
+  function install(){
+    say("It takes about a minute per blade, no tools:<br>1. Lift the arm off the glass<br>2. Press the tab, slide the old blade out<br>3. Fit the adapter (Flat D only)<br>4. Slide the new blade in until it clicks<br>5. Lower the arm gently");
+    back([["Watch the demo", () => goTo("install")]]);
+  }
+  function prices(){
+    say(`Prices per front set (2 blades):<br><b>Flat D</b> ${peso(PRODUCTS.flatD.price)} <s>${peso(PRODUCTS.flatD.list)}</s><br><b>Hybrid A</b> ${peso(PRODUCTS.hybridA.price)} <s>${peso(PRODUCTS.hybridA.list)}</s>`);
+    say("Members get an extra ₱" + EVENT.welcomeOff + " off the first set.");
+    back([["Find my wiper size", pickBrand], ["Get ₱" + EVENT.welcomeOff + " voucher", voucher]]);
+  }
+  function voucher(){
+    say("Join EZ Club free and get a ₱" + EVENT.welcomeOff + " welcome voucher right away. It takes 30 seconds.");
+    back([["Join now", () => goTo("join")]]);
+  }
+  function stores(){
+    say("You can buy online or at our partner shops. Some shops can install the blades for you.");
+    back([["See partner shops", () => goTo("stores")]]);
+  }
+  function human(){
+    if (CHAT) { say(`Our team replies on Messenger. <a href="${CHAT}" target="_blank" rel="noopener">Open Messenger</a>`); back(); }
+    else { say("Leave your question and contact number, and our team will reply within one business day."); back([["Send a question", () => goTo("contact")]]); }
+  }
+
+  /* typed questions: match a car model, else a keyword */
+  document.getElementById("botForm").addEventListener("submit", e => {
+    e.preventDefault();
+    const inp = document.getElementById("botIn"), t = inp.value.trim(); if (!t) return;
+    userSays(t); inp.value = "";
+    const q = t.toLowerCase();
+    setTimeout(() => {
+      const hits = [];
+      for (const [b, cars] of Object.entries(CARS)) cars.forEach(c => {
+        const name = c[0].toLowerCase();
+        if (name.split(/[\s/]+/).some(w => w.length > 1 && q.includes(w)) || q.includes(name)) hits.push([b, c]);
+      });
+      if (hits.length === 1) return result(...hits[0]);
+      if (hits.length > 1) { say("I found a few matches. Which one is yours?"); return chips(hits.map(([b, c]) => [b + " " + c[0] + " (" + c[1] + ")", () => result(b, c)])); }
+      const brand = Object.keys(CARS).find(b => q.includes(b.toLowerCase()));
+      if (brand) return pickModel(brand);
+      if (/install|change|replace|palit|how/.test(q)) return install();
+      if (/price|how much|magkano|cost|₱/.test(q)) return prices();
+      if (/voucher|discount|promo|join|member/.test(q)) return voucher();
+      if (/store|shop|where|buy|lazada|shopee/.test(q)) return stores();
+      if (/size|fit|car|sukat/.test(q)) return pickBrand();
+      say("Sorry, I didn't catch that. Type your car model (like \"Vios\") or pick an option below.");
+      menu();
+    }, 300);
+  });
+
+  let started = false;
+  const open = () => {
+    bot.hidden = false; btn.setAttribute("aria-expanded","true");
+    if (!started) { started = true; say("Hi! 👋 I'm the EZ Helper. I can find your wiper size in seconds."); say("What would you like to do?"); menu(); }
+    document.getElementById("botIn").focus({ preventScroll: true });
+  };
+  btn.addEventListener("click", () => bot.hidden ? open() : (bot.hidden = true, btn.setAttribute("aria-expanded","false")));
+  document.getElementById("botClose").addEventListener("click", () => { bot.hidden = true; btn.setAttribute("aria-expanded","false"); btn.focus(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !bot.hidden) { bot.hidden = true; btn.setAttribute("aria-expanded","false"); } });
+}
+
+/* ---------- Forms: sent to FormSubmit (see FORMS at the top) ---------- */
+async function submitForm(form, key){
+  const url = FORMS[key];
+  if (!url) { console.warn("No form address set for the " + key + " form; entry not saved."); return "off"; }
+  try {
+    const res = await fetch(url, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && String(data.success) === "false") console.warn("Form service: " + data.message);
+    return res.ok ? "saved" : "failed";
+  } catch { return "failed"; }
+}
+const SEND_FAIL = "We couldn't send this. Check your internet connection and try again.";
+function showErr(el, msg){ el.textContent = msg; el.hidden = !msg; }
+
+document.getElementById("joinForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, err = document.getElementById("joinErr");
+  const mobile = f.mobile.value.replace(/[\s-]/g, "");
+  if (!f.elements["name"].value.trim()) return showErr(err, "Enter your full name.");
+  if (!/^(\+?63|0)9\d{9}$/.test(mobile)) return showErr(err, "Enter a Philippine mobile number, like 0917 123 4567.");
+  if (f.email.value && !f.email.checkValidity()) return showErr(err, "Check your email address, or leave it empty.");
+  if (!f.consent.checked) return showErr(err, "Tick the privacy consent box to join.");
+  showErr(err, "");
+  const btn = f.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "Joining…";
+  const sent = await submitForm(f, "join");
+  btn.disabled = false; btn.textContent = "Join and get my voucher";
+  if (sent === "failed") return showErr(err, SEND_FAIL);
+  document.getElementById("vHello").textContent = "Welcome to EZ Club, " + f.elements["name"].value.trim().split(" ")[0] + "!";
+  document.getElementById("vCode").textContent = EVENT.welcomeCode;
+  document.getElementById("vNote").textContent = "Use this code at checkout in our Lazada or Shopee store. Valid for one set per member.";
+  f.hidden = true; document.getElementById("voucher").hidden = false;
+});
+document.getElementById("vCopy").addEventListener("click", async e => {
+  const code = document.getElementById("vCode");
+  try { await navigator.clipboard.writeText(code.textContent); e.target.textContent = "Copied"; }
+  catch { const r = document.createRange(); r.selectNodeContents(code); const s = getSelection(); s.removeAllRanges(); s.addRange(r); e.target.textContent = "Selected, press copy"; }
+});
+document.getElementById("askForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const f = e.target, err = document.getElementById("askErr");
+  if (!f.elements["name"].value.trim() || !f.contact.value.trim()) return showErr(err, "Enter your name and a mobile number or email so we can reply.");
+  if (!f.consent.checked) return showErr(err, "Tick the privacy consent box to send.");
+  showErr(err, "");
+  const btn = f.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "Sending…";
+  const sent = await submitForm(f, "inquiry");
+  btn.disabled = false; btn.textContent = "Send question";
+  if (sent === "failed") return showErr(err, SEND_FAIL);
+  f.hidden = true; document.getElementById("askDone").hidden = false;
+});
+
+/* ---------- Install demo ---------- */
+const STEPS = [
+  { mode:"side",  t:"Lift the arm", d:"Pull the wiper arm away from the glass until it stays up on its own.", f:"Iangat ang wiper arm.", s:5 },
+  { mode:"close", t:"Press and slide out", d:"Press the release tab and slide the old blade down, out of the hook.", f:"Pindutin ang lock at hilahin pababa ang lumang blade.", s:6 },
+  { mode:"close", t:"Fit the adapter", d:"Hybrid A clips straight on. For Flat D, snap on the adapter that matches your arm.", f:"Ikabit ang tamang adapter.", s:5 },
+  { mode:"close", t:"Slide up until it clicks", d:"Push the new blade up into the hook until you hear a click. Give it a gentle tug.", f:"Itulak pataas hanggang mag-click.", s:6 },
+  { mode:"side",  t:"Lower it gently", d:"Lay the arm back down slowly. Repeat on the other side. Done!", f:"Dahan-dahang ibaba. Tapos na!", s:5 }
+];
+const scene = document.getElementById("scene"), bar = document.getElementById("bar"), stepsEl = document.getElementById("steps");
+const playBtn = document.getElementById("play"), clock = document.getElementById("clock");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let cur = 0, playing = !reduce, t0 = 0, elapsed = 0, timer = null, raf = null;
+const total = STEPS.reduce((a,s) => a + s.s, 0);
+
+STEPS.forEach((s,i) => {
+  const b = document.createElement("button"); b.type = "button"; b.setAttribute("aria-label","Step " + (i+1) + ": " + s.t);
+  b.addEventListener("click", () => go(i)); bar.append(b);
+  const li = document.createElement("li"); li.innerHTML = `<div><b>${s.t}</b><span>${s.d}</span></div>`;
+  li.tabIndex = 0; li.addEventListener("click", () => go(i));
+  li.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(i); } });
+  stepsEl.append(li);
+});
+
+/* rain */
+const rain = document.getElementById("rain");
+for (let i = 0; i < 46; i++) {
+  const l = document.createElementNS("http://www.w3.org/2000/svg","line");
+  const x = Math.random()*640, y = Math.random()*360;
+  l.setAttribute("x1",x); l.setAttribute("y1",y); l.setAttribute("x2",x-4); l.setAttribute("y2",y+14);
+  l.setAttribute("stroke","#9FB3C8"); l.setAttribute("stroke-width","1.4"); l.setAttribute("class","drop");
+  l.style.animationDuration = (0.9 + Math.random()*0.8) + "s"; l.style.animationDelay = (-Math.random()*2) + "s";
+  rain.append(l);
+}
+
+function go(i){
+  cur = i; const s = STEPS[i];
+  scene.classList.remove("go");
+  scene.dataset.step = i + 1; scene.dataset.mode = s.mode;
+  document.getElementById("stepno").textContent = (i+1) + "/5";
+  document.getElementById("capT").textContent = s.t;
+  document.getElementById("capD").textContent = s.d;
+  document.getElementById("capF").textContent = s.f;
+  [...bar.children].forEach((b,j) => { b.className = j < i ? "done" : j === i ? "cur" : ""; b.style.setProperty("--p","0%"); });
+  [...stepsEl.children].forEach((li,j) => li.classList.toggle("on", j === i));
+  void scene.getBoundingClientRect();
+  requestAnimationFrame(() => requestAnimationFrame(() => scene.classList.add("go")));
+  elapsed = STEPS.slice(0,i).reduce((a,x) => a + x.s, 0);
+  t0 = performance.now();
+  clearTimeout(timer);
+  if (playing) timer = setTimeout(() => go((i + 1) % STEPS.length), s.s * 1000);
+  tick();
+}
+function tick(){
+  cancelAnimationFrame(raf);
+  const s = STEPS[cur], dt = playing ? Math.min((performance.now() - t0) / 1000, s.s) : 0;
+  bar.children[cur].style.setProperty("--p", (playing ? dt / s.s * 100 : 100) + "%");
+  const sec = Math.floor(elapsed + dt);
+  clock.textContent = "0:" + String(sec).padStart(2,"0") + " / 0:" + total;
+  if (playing) raf = requestAnimationFrame(tick);
+}
+playBtn.addEventListener("click", () => {
+  playing = !playing;
+  playBtn.textContent = playing ? "Pause" : "Play";
+  playBtn.setAttribute("aria-pressed", String(playing));
+  go(cur);
+});
+playBtn.textContent = playing ? "Pause" : "Play";
+go(0);
+</script>
+
+</body>
+</html>
