@@ -37,7 +37,7 @@
   --glass1:#2B3A4E; --glass2:#1C2737; color-scheme:dark }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:#0B0D12}
@@ -69,8 +69,8 @@ header.top nav{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap}
 header.top nav a{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:.98rem;opacity:.85}
 header.top nav a:hover{opacity:1;color:#E3A440}
 @media (max-width:760px){header.top nav{display:none}}
-header.top .btn{margin-left:auto}
-@media (min-width:761px){header.top .btn{margin-left:0}}
+header.top .hbtns{display:flex;gap:8px;margin-left:auto}
+@media (min-width:761px){header.top .hbtns{margin-left:0}}
 
 /* hero (single dark look by design: it is a photo) */
 .hero{position:relative;background:#07090D;color:var(--hero-ink);overflow:hidden}
@@ -80,6 +80,19 @@ header.top .btn{margin-left:auto}
 .realvid video{width:100%;max-width:100%;border-radius:var(--r);background:#0B0D12;display:block}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#07090D 0%,rgba(7,9,13,.92) 38%,rgba(7,9,13,.35) 70%,rgba(7,9,13,.1) 100%)}
 .hero .wrap{position:relative;z-index:1;padding-block:72px 64px;display:grid;gap:22px}
+@media (max-width:760px){.hero .wrap{padding-block:32px 28px;gap:16px}.hero h1{font-size:clamp(2.4rem,11vw,3.2rem)}.hero p.sub{font-size:1.02rem}.hero .ctas .btn{flex:1 1 auto;justify-content:center}}
+/* mobile menu */
+.menubtn{display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;border:1.5px solid #3A4558;background:transparent;color:#EDE6D6;cursor:pointer;padding:0}
+.menubtn svg{width:24px;height:24px}
+.menubtn[aria-expanded="true"]{background:#E3A440;color:#16120A;border-color:#E3A440}
+.mnav{background:#0B0D12;border-top:1px solid #222838;max-height:calc(100vh - 64px);overflow-y:auto}
+.mnav .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-block:12px 16px}
+.mnav a{display:grid;gap:2px;padding:12px;border-radius:10px;background:#161B26;text-decoration:none;color:#EDE6D6}
+.mnav a b{font-family:var(--display);font-size:1.15rem;letter-spacing:.04em;text-transform:uppercase}
+.mnav a span{font-size:.85rem;color:#9AA3B5}
+.mnav a:active{background:#2A3242}
+@media (max-width:760px){.menubtn{display:inline-flex}header.top #navLogin{display:none}}
+@media (min-width:761px){.mnav{display:none!important}}
 .hero .eyebrow{color:#E3A440}
 .hero h1{font-size:clamp(2.9rem,8vw,5.6rem);font-weight:800;text-transform:uppercase;max-width:12ch}
 .hero h1 em{font-style:normal;color:#E3A440}
@@ -326,8 +339,28 @@ img{max-width:100%}
       <a href="#stores">Stores</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn-gold btn-sm" href="#join">Join &amp; save</a>
+    <div class="hbtns">
+      <a class="btn btn-ghost btn-sm" id="navLogin" href="#login" hidden style="color:#EDE6D6">Log in</a>
+      <a class="btn btn-gold btn-sm" id="navJoin" href="#join">Join &amp; save</a>
+      <a class="btn btn-gold btn-sm" id="navAcct" href="#account" hidden>My account</a>
+      <button class="menubtn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
+  <nav class="mnav" id="mnav" aria-label="Menu" hidden>
+    <div class="wrap">
+      <a href="#products"><b>Products</b><span>Flat D and Hybrid A</span></a>
+      <a href="#fit"><b>Find my car</b><span>Wiper sizes by brand</span></a>
+      <a href="#install"><b>How to install</b><span>1-minute guide</span></a>
+      <a href="#join" id="mJoin"><b>Join &amp; save</b><span>₱50 welcome voucher</span></a>
+      <a href="#account" id="mAcct" hidden><b>My account</b><span>Voucher and my car</span></a>
+      <a href="#login" id="mLogin" hidden><b>Log in</b><span>EZ Club members</span></a>
+      <a href="#stores"><b>Where to buy</b><span>Partner shops</span></a>
+      <a href="#faq"><b>FAQ</b><span>Common questions</span></a>
+      <a href="#contact"><b>Contact us</b><span>Ask about your size</span></a>
+    </div>
+  </nav>
 </header>
 
 <section class="hero" id="top" style="padding-block:0">
@@ -590,6 +623,7 @@ img{max-width:100%}
             <div class="field"><label for="j-mobile">Mobile number</label><input id="j-mobile" name="mobile" type="tel" inputmode="tel" placeholder="09XX XXX XXXX" autocomplete="tel" required></div>
           </div>
           <div class="field"><label for="j-email">Email (optional)</label><input id="j-email" name="email" type="email" autocomplete="email"></div>
+          <div class="field" id="pwField" hidden><label for="j-pass">Create a password</label><input id="j-pass" type="password" autocomplete="new-password" minlength="6" placeholder="At least 6 characters"></div>
           <div class="row">
             <div class="field"><label for="j-brand">Car brand</label><select id="j-brand" name="car_brand"></select></div>
             <div class="field"><label for="j-model">Model and year</label><input id="j-model" name="car_model" placeholder="e.g. Vios 2019"></div>
@@ -600,6 +634,7 @@ img{max-width:100%}
           <label class="check" for="j-consent"><input id="j-consent" name="consent" type="checkbox" value="yes" required><span>I agree to the <a href="privacy.html" target="_blank" rel="noopener">Privacy Notice</a> and consent to the collection of my details under the Data Privacy Act of 2012.</span></label>
           <p class="err" id="joinErr" hidden></p>
           <button class="btn btn-gold" type="submit">Join and get my voucher</button>
+          <p id="haveAcct" hidden style="color:var(--muted)">Already a member? <a href="#login">Log in</a></p>
         </form>
         <div class="voucher" id="voucher" hidden aria-live="polite">
           <b id="vHello" style="font-family:var(--display);font-size:1.5rem"></b>
@@ -612,6 +647,52 @@ img{max-width:100%}
     </div>
   </div>
 </section>
+
+<section id="account" hidden style="background:var(--navy);color:#EEF0F6">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:#E3A440">My account</span>
+      <h2 id="accHello">Hello</h2>
+      <p class="lede" style="color:#C8CEDD" id="accSince"></p>
+    </div>
+    <div class="join">
+      <div style="display:grid;gap:16px;align-content:start">
+        <div class="voucher" style="color:var(--ink)">
+          <span class="label" style="color:var(--gold-ink)">Your welcome voucher</span>
+          <span class="code" id="accCode"></span>
+          <small id="accCodeNote"></small>
+        </div>
+        <div class="voucher" style="color:var(--ink);background:var(--surface);border-style:solid;border-color:var(--line)">
+          <span class="label">Your car's wiper sizes</span>
+          <div id="accSizes"></div>
+        </div>
+      </div>
+      <form class="form" id="accForm" novalidate style="color:var(--ink)">
+        <b style="font-family:var(--display);font-size:1.4rem;text-transform:uppercase">My car and reminders</b>
+        <div class="row">
+          <div class="field"><label for="a-brand">Car brand</label><select id="a-brand"></select></div>
+          <div class="field"><label for="a-model">Model</label><select id="a-model"></select></div>
+        </div>
+        <div class="field"><label for="a-city">City</label><input id="a-city" autocomplete="address-level2"></div>
+        <label class="check" for="a-remind"><input id="a-remind" type="checkbox"><span>Remind me to replace my wipers every 6 months.</span></label>
+        <label class="check" for="a-promo"><input id="a-promo" type="checkbox"><span>Send me promos and rainy-season deals.</span></label>
+        <p id="accSaved" class="label" hidden style="color:var(--ok)">Saved</p>
+        <div class="buy"><button class="btn btn-gold" type="submit">Save</button><button class="btn btn-ghost" type="button" id="logoutBtn">Log out</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="loginBox" hidden style="position:fixed;inset:0;z-index:40;background:rgba(7,9,13,.6);display:grid;place-items:center;padding:16px">
+  <form class="form" id="loginForm" novalidate role="dialog" aria-labelledby="loginTitle" style="width:min(400px,100%)">
+    <h3 id="loginTitle" style="text-transform:uppercase">Log in to EZ Club</h3>
+    <div class="field"><label for="l-mobile">Mobile number</label><input id="l-mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="09XX XXX XXXX"></div>
+    <div class="field"><label for="l-pass">Password</label><input id="l-pass" type="password" autocomplete="current-password"></div>
+    <p class="err" id="loginErr" hidden></p>
+    <div class="buy"><button class="btn btn-gold" type="submit">Log in</button><button class="btn btn-ghost" type="button" id="loginCancel">Cancel</button></div>
+    <p style="color:var(--muted);font-size:.95rem">New here? <a href="#join" id="loginToJoin">Join free and get ₱50 off</a>. Forgot your password? Message us from the contact form.</p>
+  </form>
+</div>
 
 <section id="stores">
   <div class="wrap">
@@ -640,7 +721,7 @@ img{max-width:100%}
   </div>
 </section>
 
-<section>
+<section id="faq">
   <div class="wrap" style="max-width:860px">
     <div class="sec-head"><span class="eyebrow">Questions</span><h2>FAQ</h2></div>
     <details><summary>Flat D or Hybrid A: which should I buy?</summary><p>If your arm is a U-hook, both fit. Hybrid A costs less and has a sturdy covered frame. Flat D has a slimmer beam design and comes with adapters for other arm types, so pick it if you're not sure what your arm is, or if your car has a side pin or push button.</p></details>
@@ -843,6 +924,16 @@ if (fromHash) { brand = fromHash; }
 render();
 if (fromHash) document.getElementById("fit").scrollIntoView();
 
+/* ---------- Mobile menu ---------- */
+{
+  const btn = document.getElementById("menuBtn"), nav = document.getElementById("mnav");
+  const setOpen = open => { nav.hidden = !open; btn.setAttribute("aria-expanded", String(open)); btn.setAttribute("aria-label", open ? "Close menu" : "Open menu"); };
+  btn.addEventListener("click", () => setOpen(nav.hidden));
+  nav.addEventListener("click", e => { if (e.target.closest("a")) setOpen(false); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !nav.hidden) { setOpen(false); btn.focus(); } });
+  document.addEventListener("click", e => { if (!nav.hidden && !e.target.closest("header.top")) setOpen(false); });
+}
+
 /* ---------- Videos ---------- */
 if (VIDEOS.hero && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
   const v = document.getElementById("heroVideo");
@@ -1013,11 +1104,25 @@ document.getElementById("joinForm").addEventListener("submit", async e => {
   if (!f.consent.checked) return showErr(err, "Tick the privacy consent box to join.");
   showErr(err, "");
   const btn = f.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "Joining…";
-  const sent = await submitForm(f, "join");
-  btn.disabled = false; btn.textContent = "Join and get my voucher";
-  if (sent === "failed") return showErr(err, SEND_FAIL);
+  const reset = () => { btn.disabled = false; btn.textContent = "Join and get my voucher"; };
+  let code = EVENT.welcomeCode;
+  if (ACCOUNTS) {
+    const pass = document.getElementById("j-pass").value;
+    if (pass.length < 6) { reset(); return showErr(err, "Use a password with at least 6 characters."); }
+    const r = await api("signup", { name: f.elements["name"].value, mobile, password: pass, email: f.email.value,
+      car_brand: f.car_brand.value, car_model: f.car_model.value, city: f.city.value,
+      reminder: f.reminder.checked, promos: f.promos.checked, consent: f.consent.checked });
+    if (r.error) { reset(); return showErr(err, r.error); }
+    code = r.member.voucher;
+    submitForm(f, "join");
+    setMember(r.member);
+  } else {
+    const sent = await submitForm(f, "join");
+    if (sent === "failed") { reset(); return showErr(err, SEND_FAIL); }
+  }
+  reset();
   document.getElementById("vHello").textContent = "Welcome to EZ Club, " + f.elements["name"].value.trim().split(" ")[0] + "!";
-  document.getElementById("vCode").textContent = EVENT.welcomeCode;
+  document.getElementById("vCode").textContent = code;
   document.getElementById("vNote").textContent = "Use this code at checkout in our Lazada or Shopee store. Valid for one set per member.";
   f.hidden = true; document.getElementById("voucher").hidden = false;
 });
@@ -1038,6 +1143,100 @@ document.getElementById("askForm").addEventListener("submit", async e => {
   if (sent === "failed") return showErr(err, SEND_FAIL);
   f.hidden = true; document.getElementById("askDone").hidden = false;
 });
+
+/* ---------- Member accounts (only when the site runs on its own server) ---------- */
+let ACCOUNTS = false;
+async function api(path, body){
+  try {
+    const res = await fetch("api/" + path, body === undefined ? { credentials: "same-origin" } :
+      { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const data = await res.json();
+    return res.ok ? data : { error: data.error || "Something went wrong. Try again." };
+  } catch { return { error: "We couldn't reach the server. Check your connection and try again." }; }
+}
+const accBrand = document.getElementById("a-brand"), accModel = document.getElementById("a-model");
+["", ...Object.keys(CARS), "Other"].forEach(b => accBrand.append(new Option(b || "Select brand", b)));
+function fillModels(brand, selected){
+  accModel.innerHTML = "";
+  (CARS[brand] || []).forEach(c => accModel.append(new Option(c[0] + " (" + c[1] + ")", c[0])));
+  accModel.append(new Option("Other / not listed", "Other"));
+  if (selected) {
+    const s = selected.toLowerCase(), opts = [...accModel.options];
+    const hit = opts.find(o => o.value === selected) || opts.find(o => o.value !== "Other" && s.includes(o.value.toLowerCase().split(" /")[0]));
+    accModel.value = hit ? hit.value : "Other";
+  }
+}
+accBrand.addEventListener("change", () => { fillModels(accBrand.value); showSizes(); });
+accModel.addEventListener("change", showSizes);
+function showSizes(){
+  const box = document.getElementById("accSizes"), car = (CARS[accBrand.value] || []).find(c => c[0] === accModel.value);
+  if (!car) { box.innerHTML = `<p style="color:var(--muted)">Pick your car to see your sizes, or measure your old blades.</p>`; return; }
+  const fit = k => PRODUCTS[k].sizes.includes(car[2]) && PRODUCTS[k].sizes.includes(car[3]);
+  box.innerHTML = `<div style="font-family:var(--display);font-weight:800;font-size:2.2rem">${car[2]}" + ${car[3]}"</div>
+    <span style="color:var(--muted)">Driver ${car[2]}", passenger ${car[3]}"</span>
+    <div class="fits" style="margin-top:8px">${fit("flatD") ? '<span class="pill ok">Flat D fits</span>' : '<span class="pill warn">Flat D size not stocked</span>'}
+    ${fit("hybridA") ? '<span class="pill ok">Hybrid A fits U-hook</span>' : '<span class="pill warn">Hybrid A size not stocked</span>'}</div>`;
+}
+function setMember(m){
+  const on = !!m;
+  document.getElementById("account").hidden = !on;
+  document.getElementById("navAcct").hidden = !on;
+  document.getElementById("navJoin").hidden = on;
+  document.getElementById("navLogin").hidden = on || !ACCOUNTS;
+  document.getElementById("mAcct").hidden = !on;
+  document.getElementById("mJoin").hidden = on;
+  document.getElementById("mLogin").hidden = on || !ACCOUNTS;
+  if (!on) return;
+  document.getElementById("accHello").textContent = "Hello, " + m.name.split(" ")[0];
+  const due = new Date(m.joined + "T00:00:00"); due.setMonth(due.getMonth() + 6);
+  document.getElementById("accSince").textContent = "EZ Club member since " + m.joined +
+    (m.reminder ? ". Next wiper check: " + due.toLocaleDateString("en-PH", { month: "long", year: "numeric" }) + "." : ".");
+  document.getElementById("accCode").textContent = m.voucher;
+  document.getElementById("accCodeNote").textContent = m.voucher_used ? "Already used. Thanks for shopping with us!" :
+    "₱" + EVENT.welcomeOff + " off your first set. Show this code in store or enter it at checkout.";
+  accBrand.value = CARS[m.car_brand] || m.car_brand === "Other" ? m.car_brand : "";
+  fillModels(accBrand.value, m.car_model);
+  document.getElementById("a-city").value = m.city || "";
+  document.getElementById("a-remind").checked = m.reminder;
+  document.getElementById("a-promo").checked = m.promos;
+  showSizes();
+}
+document.getElementById("accForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const r = await api("me", { car_brand: accBrand.value, car_model: accModel.value, city: document.getElementById("a-city").value,
+    reminder: document.getElementById("a-remind").checked, promos: document.getElementById("a-promo").checked });
+  const saved = document.getElementById("accSaved");
+  saved.textContent = r.error || "Saved"; saved.hidden = false;
+  if (r.member) setMember(r.member);
+  setTimeout(() => { saved.hidden = true; }, 2500);
+});
+document.getElementById("logoutBtn").addEventListener("click", async () => { await api("logout", {}); setMember(null); location.hash = "top"; });
+const loginBox = document.getElementById("loginBox");
+function openLogin(){ loginBox.hidden = false; document.getElementById("l-mobile").focus(); }
+function closeLogin(){ loginBox.hidden = true; }
+document.querySelectorAll('a[href="#login"]').forEach(a => a.addEventListener("click", e => { e.preventDefault(); openLogin(); }));
+document.getElementById("loginCancel").addEventListener("click", closeLogin);
+document.getElementById("loginToJoin").addEventListener("click", closeLogin);
+loginBox.addEventListener("click", e => { if (e.target === loginBox) closeLogin(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !loginBox.hidden) closeLogin(); });
+document.getElementById("loginForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = document.getElementById("loginErr");
+  const r = await api("login", { mobile: document.getElementById("l-mobile").value, password: document.getElementById("l-pass").value });
+  if (r.error) return showErr(err, r.error);
+  showErr(err, ""); closeLogin(); setMember(r.member);
+  document.getElementById("account").scrollIntoView();
+});
+(async () => {
+  if (location.hostname.endsWith("github.io") || location.hostname.endsWith("claudeusercontent.com") || location.protocol === "file:") return;
+  const r = await api("me");
+  if (r.error || !("member" in r)) return;
+  ACCOUNTS = true;
+  document.getElementById("pwField").hidden = false;
+  document.getElementById("haveAcct").hidden = false;
+  setMember(r.member);
+  if (r.member && location.hash === "#account") document.getElementById("account").scrollIntoView();
+})();
 
 /* ---------- Install demo ---------- */
 const STEPS = [

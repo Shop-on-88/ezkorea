@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ezkorea-server",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "C:/Users/kimsu/AppData/Local/Temp/ezk/localtest/ezkorea_app.py"
+      ],
+      "port": 5011
+    }
+  ]
+}
