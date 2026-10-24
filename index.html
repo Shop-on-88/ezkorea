@@ -65,10 +65,10 @@ section{padding-block:72px}
 header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:#0B0D12;color:#EDE6D6;border-bottom:1px solid #222838}
 header.top .wrap{display:flex;align-items:center;gap:20px;padding-block:10px}
 header.top img{height:34px;width:auto;display:block}
-header.top nav{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap}
-header.top nav a{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:.98rem;opacity:.85}
-header.top nav a:hover{opacity:1;color:#E3A440}
-@media (max-width:760px){header.top nav{display:none}}
+header.top .dnav{display:flex;gap:18px;margin-left:auto;flex-wrap:wrap}
+header.top .dnav a{font-family:var(--display);font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;font-size:.98rem;opacity:.85}
+header.top .dnav a:hover{opacity:1;color:#E3A440}
+@media (max-width:760px){header.top .dnav{display:none}}
 header.top .hbtns{display:flex;gap:8px;margin-left:auto}
 @media (min-width:761px){header.top .hbtns{margin-left:0}}
 
@@ -86,7 +86,7 @@ header.top .hbtns{display:flex;gap:8px;margin-left:auto}
 .menubtn svg{width:24px;height:24px}
 .menubtn[aria-expanded="true"]{background:#E3A440;color:#16120A;border-color:#E3A440}
 .mnav{background:#0B0D12;border-top:1px solid #222838;max-height:calc(100vh - 64px);overflow-y:auto}
-.mnav .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-block:12px 16px}
+header.top .mnav .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding-block:12px 16px}
 .mnav a{display:grid;gap:2px;padding:12px;border-radius:10px;background:#161B26;text-decoration:none;color:#EDE6D6}
 .mnav a b{font-family:var(--display);font-size:1.15rem;letter-spacing:.04em;text-transform:uppercase}
 .mnav a span{font-size:.85rem;color:#9AA3B5}
@@ -332,7 +332,7 @@ img{max-width:100%}
 <header class="top">
   <div class="wrap">
     <a href="#top" aria-label="EZ KOREA home"><img src="img/logo.jpg" alt="EZ KOREA"></a>
-    <nav aria-label="Sections">
+    <nav class="dnav" aria-label="Sections">
       <a href="#products">Products</a>
       <a href="#fit">Find my car</a>
       <a href="#install">How to install</a>
