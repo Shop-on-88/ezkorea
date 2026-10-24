@@ -929,7 +929,15 @@ if (fromHash) document.getElementById("fit").scrollIntoView();
   const btn = document.getElementById("menuBtn"), nav = document.getElementById("mnav");
   const setOpen = open => { nav.hidden = !open; btn.setAttribute("aria-expanded", String(open)); btn.setAttribute("aria-label", open ? "Close menu" : "Open menu"); };
   btn.addEventListener("click", () => setOpen(nav.hidden));
-  nav.addEventListener("click", e => { if (e.target.closest("a")) setOpen(false); });
+  nav.addEventListener("click", e => {
+    const a = e.target.closest("a"); if (!a) return;
+    setOpen(false);
+    const target = !e.defaultPrevented && document.querySelector(a.getAttribute("href"));
+    if (!target) return;
+    e.preventDefault();
+    history.replaceState(null, "", a.getAttribute("href"));
+    requestAnimationFrame(() => target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+  });
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !nav.hidden) { setOpen(false); btn.focus(); } });
   document.addEventListener("click", e => { if (!nav.hidden && !e.target.closest("header.top")) setOpen(false); });
 }
