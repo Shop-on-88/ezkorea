@@ -936,7 +936,7 @@ if (fromHash) document.getElementById("fit").scrollIntoView();
     if (!target) return;
     e.preventDefault();
     history.replaceState(null, "", a.getAttribute("href"));
-    requestAnimationFrame(() => target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }));
+    setTimeout(() => target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }), 0);
   });
   document.addEventListener("keydown", e => { if (e.key === "Escape" && !nav.hidden) { setOpen(false); btn.focus(); } });
   document.addEventListener("click", e => { if (!nav.hidden && !e.target.closest("header.top")) setOpen(false); });
